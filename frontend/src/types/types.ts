@@ -5,4 +5,6 @@ export interface Member {
   photo?: string;
   photoFile?: File;
   photoPreview?: string;
+  about?: string;
+  committeee?: string;
 }

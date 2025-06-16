@@ -1,4 +1,6 @@
 export interface Member {
+  about?: string;
+  committee?: string;
   photo: string;
   id?: number;
   name: string;

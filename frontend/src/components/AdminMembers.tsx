@@ -7,6 +7,9 @@ import type { AxiosResponse } from "axios";
 interface MemberFormState extends Partial<Member> {
   photoFile?: File;
   photoPreview?: string;
+  photo_url?: string;
+  committee?: string;
+  about?: string;
 }
 
 const AdminMembers = () => {
@@ -39,7 +42,7 @@ const AdminMembers = () => {
 
   const openAddModal = () => {
     setEditMode(false);
-    setCurrentMember({ name: "", position: "" });
+    setCurrentMember({ name: "", position: "", committee: "", about: ""});
     setModalOpen(true);
   };
 
@@ -60,6 +63,8 @@ const AdminMembers = () => {
     const formData = new FormData();
     formData.append("name", currentMember.name || "");
     formData.append("position", currentMember.position || "");
+    formData.append("committee", currentMember.committee || "");
+    formData.append("about", currentMember.about || "");
     if (currentMember.photoFile) {
       formData.append("photo", currentMember.photoFile);
     }
@@ -91,6 +96,16 @@ const AdminMembers = () => {
     if (!token) navigate("/admin");
     fetchMembers();
   }, [navigate]);
+
+  const committeeOptions = [
+    "health",
+    "education",
+    "economic empowerment",
+    "social inclusion and equity",
+    "peacebuilding and security",
+    "active citizenship",
+    "environment",
+  ];
 
   return (
     <div className="min-h-screen w-screen bg-gray-50 p-6">
@@ -150,6 +165,8 @@ const AdminMembers = () => {
                   <tr>
                     <th className="text-left py-4 px-6 font-medium text-gray-700">Member</th>
                     <th className="text-left py-4 px-6 font-medium text-gray-700">Position</th>
+                    <th className="text-left py-4 px-6 font-medium text-gray-700">Committee</th>
+                    <th className="text-left py-4 px-6 font-medium text-gray-700">About</th>
                     <th className="text-left py-4 px-6 font-medium text-gray-700">Photo</th>
                     <th className="text-left py-4 px-6 font-medium text-gray-700">Actions</th>
                   </tr>
@@ -164,6 +181,14 @@ const AdminMembers = () => {
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                           {m.position}
                         </span>
+                      </td>
+                      <td className="py-4 px-6">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          {m.committee}
+                        </span>
+                      </td>
+                       <td className="py-4 px-6">
+                        <div className="font-medium text-gray-800">{m.about}</div>
                       </td>
                       <td className="py-4 px-6">
                         {m.photo_url ? (
@@ -224,7 +249,7 @@ const AdminMembers = () => {
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 text-black">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Name *
@@ -257,6 +282,36 @@ const AdminMembers = () => {
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                     placeholder="Enter member position"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Committee</label>
+                  <select
+                    value={currentMember.committee || ""}
+                    onChange={(e) =>
+                      setCurrentMember({ ...currentMember, committee: e.target.value })
+                    }
+                    className="w-full border rounded px-3 py-2 text-black"
+                  >
+                    <option value="">-- Select Committee --</option>
+                    {committeeOptions.map((option) => (
+                      <option key={option} value={option}>
+                        {option.charAt(0).toUpperCase() + option.slice(1)}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">About</label>
+                  <textarea
+                    value={currentMember.about || ""}
+                    onChange={(e) =>
+                      setCurrentMember({ ...currentMember, about: e.target.value })
+                    }
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    rows={3}
                   />
                 </div>
 

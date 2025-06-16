@@ -11,6 +11,8 @@ class Member(BaseModel):
     name: str
     position: str
     photo_url: str
+    committee: Optional[str] = None
+    about: Optional[str] = None
 
 class Project(BaseModel):
     title: str
@@ -33,6 +35,8 @@ class ReportOut(Report):
 class MemberBase(BaseModel):
     name: str
     position: str
+    committee: Optional[str] = None
+    about: Optional[str] = None
 
 class MemberCreate(MemberBase):
     pass
@@ -41,6 +45,8 @@ class Member(BaseModel):
     id: int
     name: str
     position: str
+    committee: Optional[str] = None
+    about: Optional[str] = None
     photo_url: Optional[str] = None  # ← must match model
 
     class Config:

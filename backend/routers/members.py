@@ -35,6 +35,8 @@ def get_members(db: Session = Depends(get_db)):
 async def add_member(
     name: str = Form(...),
     position: str = Form(...),
+    committee: str = Form(None),
+    about: str = Form(None),
     photo: UploadFile = File(None),
     db: Session = Depends(get_db)
 ):
@@ -46,7 +48,7 @@ async def add_member(
         with open(filepath, "wb") as buffer:
             buffer.write(await photo.read())
 
-    new = CommitteeMember(name=name, position=position, photo_url=filename)
+    new = CommitteeMember(name=name, position=position, photo_url=filename, committee=committee, about=about)
     db.add(new)
     db.commit()
     db.refresh(new)
@@ -58,6 +60,8 @@ async def update_member(
     member_id: int,
     name: str = Form(...),
     position: str = Form(...),
+    committee: str = Form(None),
+    about: str = Form(None),
     photo: UploadFile = File(None),
     db: Session = Depends(get_db)
 ):
@@ -67,6 +71,8 @@ async def update_member(
 
     member.name = name
     member.position = position
+    member.committee = committee
+    member.about = about
 
     if photo:
         ext = photo.filename.split(".")[-1]

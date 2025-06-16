@@ -15,6 +15,9 @@ class CommitteeMember(Base):
     name = Column(String)
     position = Column(String)
     photo_url = Column(String)
+
+    committee = Column(String, nullable=True)
+    about = Column(Text, nullable=True)
     
 
 class Project(Base):
