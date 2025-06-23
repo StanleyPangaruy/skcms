@@ -87,7 +87,7 @@ const Reports = () => {
   const handleDownload = (report: Report) => {
     try {
       const link = document.createElement('a');
-      link.href = `https://skgomez.onrender.com/${report.file_path}/`;
+      link.href = `https://skgomez.onrender.com/${report.file_path}`;
       link.download = report.title;
       link.target = '_blank';
       document.body.appendChild(link);
@@ -263,7 +263,7 @@ const Reports = () => {
                 <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
                   <div className="flex space-x-3">
                     <a
-                      href={`https://skgomez.onrender.com/${report.file_path}/`}
+                      href={`https://skgomez.onrender.com/${report.file_path}`}
                       target="_blank"
                       rel="noreferrer"
                       className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg text-sm font-medium transition-colors"
