@@ -73,3 +73,14 @@ class Project(ProjectBase):
 
     class Config:
         orm_mode = True
+
+class ReportBase(BaseModel):
+    title: str
+
+class ReportOut(ReportBase):
+    id: int
+    file_path: str
+    uploaded_at: datetime
+
+    class Config:
+        orm_mode = True

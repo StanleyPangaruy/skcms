@@ -20,6 +20,7 @@ export interface Project {
 }
 
 export interface Report {
+  file_size: any;
   id?: number;
   title: string;
   file_path: string;

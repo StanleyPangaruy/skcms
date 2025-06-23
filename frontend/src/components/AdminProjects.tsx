@@ -165,6 +165,15 @@ const AdminProjects = () => {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
+          <button
+            onClick={() => navigate("/dashboard")}
+            className="p-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-md transition-colors"
+            title="Back to Dashboard"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+          </button>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Project Management</h1>
           <p className="text-gray-600">Manage barangay projects and track their progress</p>
         </div>
