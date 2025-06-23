@@ -23,11 +23,13 @@ class CommitteeMember(Base):
 class Project(Base):
     __tablename__ = "projects"
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String)
-    description = Column(Text)
-    category = Column(String)
-    date = Column(String)
-    image_url = Column(String)
+    title = Column(String, nullable=False)
+    description = Column(Text, nullable=False)
+    status = Column(String, nullable=False)
+    budget = Column(String, nullable=False)
+    date = Column(String, nullable=False)
+    category = Column(String, nullable=False)
+    image_url = Column(String, nullable=True)  # NEW
 
 class TransparencyReport(Base):
     __tablename__ = "reports"

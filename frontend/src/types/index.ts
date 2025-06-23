@@ -9,6 +9,8 @@ export interface Member {
 }
 
 export interface Project {
+  status: ReactNode;
+  budget: ReactNode;
   id?: number;
   title: string;
   description: string;

@@ -1,6 +1,6 @@
 import Hero from "./components/Hero";
 import Members from "./components/Members";
-// import Projects from "./components/Projects";
+import Projects from "./components/Projects";
 // import Reports from "./components/Reports";
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <div>
       <Hero />
       <Members />
-      {/* <Projects />
-      <Reports /> */}
+      <Projects />
+      {/* <Reports /> */}
     </div>
   );
 }

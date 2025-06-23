@@ -1,5 +1,5 @@
 # schemas.py
-from typing import Optional
+from typing import Literal, Optional
 from pydantic import BaseModel
 from datetime import datetime
 
@@ -20,6 +20,9 @@ class Project(BaseModel):
     category: str
     date: str
     image_url: str
+    status: Literal["Completed", "Ongoing", "Planned"]
+    budget: str
+    
 
 class Report(BaseModel):
     title: str
@@ -48,6 +51,25 @@ class Member(BaseModel):
     committee: Optional[str] = None
     about: Optional[str] = None
     photo_url: Optional[str] = None  # ← must match model
+
+    class Config:
+        orm_mode = True
+
+
+class ProjectBase(BaseModel):
+    title: str
+    description: str
+    status: Literal["Completed", "Ongoing", "Planned"]
+    budget: str
+    date: str
+    category: str
+    image_url: str | None = None  # NEW
+
+class ProjectCreate(ProjectBase):
+    pass
+
+class Project(ProjectBase):
+    id: int
 
     class Config:
         orm_mode = True
