@@ -75,7 +75,7 @@ const AdminProjects = () => {
       setEditingProject(project);
       setCurrent(project);
       if (project.image_url) {
-        setPreview(`https://skgomez.onrender.com/uploads/${project.image_url}`);
+        setPreview(`https://skgomez.onrender.com/uploads/${project.image_url}/`);
       }
     } else {
       setEditingProject(null);

@@ -156,7 +156,7 @@ const Projects = () => {
                 {project.image_url ? (
                   <div className="h-56 bg-gradient-to-br from-blue-100 to-green-100 relative overflow-hidden">
                     <img
-                      src={`https://skgomez.onrender.com/uploads/${project.image_url}`}
+                      src={`https://skgomez.onrender.com/uploads/${project.image_url}/`}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
@@ -229,7 +229,7 @@ const Projects = () => {
                 {selectedProject.image_url && (
                   <div className="h-64 md:h-80 bg-gradient-to-br from-blue-100 to-green-100 relative">
                     <img
-                      src={`https://skgomez.onrender.com/uploads/${selectedProject.image_url}`}
+                      src={`https://skgomez.onrender.com/uploads/${selectedProject.image_url}/`}
                       alt={selectedProject.title}
                       className="w-full h-full object-cover"
                     />

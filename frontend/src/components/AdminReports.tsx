@@ -157,7 +157,7 @@ const AdminReports = () => {
 
   const handleDownload = (id: number, filename: string) => {
     try {
-      const downloadUrl = `${API_URL}/download/${id}`;
+      const downloadUrl = `${API_URL}/download/${id}/`;
       const link = document.createElement('a');
       link.href = downloadUrl;
       link.download = filename;
