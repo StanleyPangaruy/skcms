@@ -10,7 +10,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Or specify your React frontend origin
+    allow_origins=["https://skgomez.vercel.app/"],  # Or specify your React frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
