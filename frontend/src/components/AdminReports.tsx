@@ -29,7 +29,7 @@ const AdminReports = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const API_URL = 'http://localhost:8000/reports';
+  const API_URL = 'https://skgomez.onrender.com/reports';
   const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
   const ACCEPTED_TYPES = ['.pdf', '.xls', '.xlsx', '.doc', '.docx'];
 
@@ -157,7 +157,7 @@ const AdminReports = () => {
 
   const handleDownload = (id: number, filename: string) => {
     try {
-      const downloadUrl = `http://localhost:8000${API_URL}/download/${id}`;
+      const downloadUrl = `${API_URL}/download/${id}`;
       const link = document.createElement('a');
       link.href = downloadUrl;
       link.download = filename;

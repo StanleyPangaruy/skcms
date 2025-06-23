@@ -73,7 +73,7 @@ const Members = () => {
                 <div className="relative mb-6">
                   <div className="relative mx-auto w-40 h-40 rounded-full overflow-hidden ring-6 ring-green-400 group-hover:ring-green-500 transition-all duration-300 shadow-2xl">
                     <img
-                      src={`http://localhost:8000/uploads/${m.photo_url}`}
+                      src={`https://skgomez.onrender.com/uploads/${m.photo_url}`}
                       alt={m.name}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                     />
@@ -116,7 +116,7 @@ const Members = () => {
                   <div className="relative mb-6">
                     <div className="relative mx-auto w-32 h-32 rounded-full overflow-hidden ring-4 ring-green-300 group-hover:ring-green-400 transition-all duration-300 shadow-lg">
                       <img
-                        src={`http://localhost:8000/uploads/${m.photo_url}`}
+                        src={`https://skgomez.onrender.com/${m.photo_url}`}
                         alt={m.name}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                       />
@@ -160,7 +160,7 @@ const Members = () => {
                   <div className="relative mb-4">
                     <div className="relative mx-auto w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden ring-3 ring-green-200 group-hover:ring-green-300 transition-all duration-300">
                       <img
-                        src={`http://localhost:8000/uploads/${m.photo_url}`}
+                        src={`https://skgomez.onrender.com/${m.photo_url}`}
                         alt={m.name}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                       />
@@ -208,7 +208,7 @@ const Members = () => {
                   <div className="relative mb-4">
                     <div className="relative mx-auto w-24 h-24 rounded-full overflow-hidden ring-3 ring-green-200 group-hover:ring-green-300 transition-all duration-300">
                       <img
-                        src={`http://localhost:8000/uploads/${m.photo_url}`}
+                        src={`https://skgomez.onrender.com/uploads/${m.photo_url}`}
                         alt={m.name}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                       />

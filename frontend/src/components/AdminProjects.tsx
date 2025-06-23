@@ -75,7 +75,7 @@ const AdminProjects = () => {
       setEditingProject(project);
       setCurrent(project);
       if (project.image_url) {
-        setPreview(`http://localhost:8000/uploads/${project.image_url}`);
+        setPreview(`https://skgomez.onrender.com/uploads/${project.image_url}`);
       }
     } else {
       setEditingProject(null);
@@ -234,7 +234,7 @@ const AdminProjects = () => {
                 {project.image_url && (
                   <div className="h-48 bg-gray-100">
                     <img
-                      src={`http://localhost:8000/uploads/${project.image_url}`}
+                      src={`https://skgomez.onrender.com/uploads/${project.image_url}`}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />

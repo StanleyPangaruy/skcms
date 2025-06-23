@@ -51,7 +51,7 @@ const AdminMembers = () => {
     setCurrentMember({
       ...member,
       photoPreview: member.photo_url
-        ? `http://localhost:8000/uploads/${member.photo_url}`
+        ? `https://skgomez.onrender.com/uploads/${member.photo_url}`
         : undefined,
     });
     setModalOpen(true);
@@ -193,7 +193,7 @@ const AdminMembers = () => {
                       <td className="py-4 px-6">
                         {m.photo_url ? (
                           <img
-                            src={`http://localhost:8000/uploads/${m.photo_url}`}
+                            src={`https://skgomez.onrender.com/uploads/${m.photo_url}`}
                             alt={m.name}
                             className="h-12 w-12 object-cover rounded-full border-2 border-gray-200"
                           />
