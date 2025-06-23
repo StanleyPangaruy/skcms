@@ -39,7 +39,7 @@ const Projects = () => {
   const fetchProjects = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("/projects");
+      const res = await axios.get("/projects/");
       setProjects(res.data);
     } catch (error) {
       console.error("Error fetching projects:", error);

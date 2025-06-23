@@ -22,7 +22,7 @@ const Reports = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await axios.get("/reports");
+      const response = await axios.get("/reports/");
       setReports(response.data);
     } catch (err) {
       console.error('Error fetching reports:', err);

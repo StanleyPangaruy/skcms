@@ -6,7 +6,7 @@ const Members = () => {
   const [members, setMembers] = useState<Member[]>([]);
 
   useEffect(() => {
-    axios.get("/members").then((res) => setMembers(res.data));
+    axios.get("/members/").then((res) => setMembers(res.data));
   }, []);
 
   return (

@@ -29,7 +29,7 @@ const AdminReports = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const API_URL = 'https://skgomez.onrender.com/reports';
+  const API_URL = 'https://skgomez.onrender.com/reports/';
   const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
   const ACCEPTED_TYPES = ['.pdf', '.xls', '.xlsx', '.doc', '.docx'];
 

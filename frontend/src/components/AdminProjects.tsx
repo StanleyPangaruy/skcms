@@ -42,7 +42,7 @@ const AdminProjects = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (!token) navigate("/admin");
+    if (!token) navigate("/admin/");
     fetchProjects();
   }, [navigate]);
 

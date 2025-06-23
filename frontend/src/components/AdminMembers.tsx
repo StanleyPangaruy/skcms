@@ -21,7 +21,7 @@ const AdminMembers = () => {
 
   const fetchMembers = async () => {
     try {
-      const res = await axios.get("/members");
+      const res = await axios.get("/members/");
       setMembers(res.data);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
