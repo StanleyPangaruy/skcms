@@ -1,6 +1,6 @@
 // src/components/Reports.tsx
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "../api/axios";
 import type { Report } from "../types";
 
@@ -12,7 +12,6 @@ const Reports = () => {
   const [sortBy, setSortBy] = useState<'date' | 'title'>('date');
   const [currentPage, setCurrentPage] = useState(1);
   const [reportsPerPage] = useState(6); // Limit to 6 reports per page
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchReports();
@@ -32,9 +31,6 @@ const Reports = () => {
     }
   };
 
-  const handleBack = () => {
-    navigate(-1);
-  };
 
   const getFileIcon = (filename: string) => {
     const ext = filename?.split('.').pop()?.toLowerCase();
@@ -115,25 +111,7 @@ const Reports = () => {
         {/* Header with Back Button */}
         <div className="mb-8">
           <div className="flex items-center mb-6">
-            <button
-              onClick={handleBack}
-              className="flex items-center text-gray-600 hover:text-gray-800 transition-colors mr-4 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200 hover:shadow-md"
-            >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              Back
-            </button>
+
           </div>
           
           <div className="text-center mb-8">
