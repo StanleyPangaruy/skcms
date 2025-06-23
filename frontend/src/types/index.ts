@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export interface Member {
   about?: string;
   committee?: string;
@@ -20,7 +22,7 @@ export interface Project {
 }
 
 export interface Report {
-  file_size: any;
+  file_size: unknown;
   id?: number;
   title: string;
   file_path: string;
